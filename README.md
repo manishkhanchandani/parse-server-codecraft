@@ -18,6 +18,10 @@ Read the full Parse Server guide here: https://github.com/ParsePlatform/parse-se
 * You now have a database named "dev" that contains your Parse data
 * Install ngrok and you can test with devices
 
+
+npm --add-python-to-path='true' --debug install --global windows-build-tools
+
+
 ### Getting Started With Heroku + mLab Development
 
 #### With the Heroku Button
