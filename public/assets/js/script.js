@@ -110,6 +110,7 @@ Config.getUrl = function() {
   var port = window.location.port;
   var url = window.location.protocol + '//' + window.location.hostname;
   if (port) url = url + ':' + port;
+  console.log('url is ', url);
   return url;
 }
 
