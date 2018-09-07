@@ -37,7 +37,7 @@
     "parseAppId": {
       "type": "string",
       "minLength": 1,
-      "defaultValue": "myAppId"
+      "defaultValue": "myAppID"
     },
     "parseMasterKey": {
       "type": "string",

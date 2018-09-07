@@ -20,7 +20,7 @@ var api = new ParseServer({
 	
 	//**** Security Settings ****//
 	allowClientClassCreation: process.env.CLIENT_CLASS_CREATION || false, 
-	appId: process.env.APP_ID || 'myAppId',
+	appId: process.env.APP_ID || 'myAppID',
 	masterKey: process.env.MASTER_KEY || 'myMasterKey', //Add your master key here. Keep it secret!	
 	
 	//**** Live Query ****//
