@@ -25,7 +25,7 @@ var api = new ParseServer({
 	
 	//**** Live Query ****//
 	liveQuery: {
-		classNames: ["TestObject1"] // List of classes to support for query subscriptions - , "TestObject", "Place", "Team", "Player", "ChatMessage"
+		classNames: ["TestObject1","XT_videos"] // List of classes to support for query subscriptions - , "TestObject", "Place", "Team", "Player", "ChatMessage"
 	},
 
 	//**** Email Verification ****//
