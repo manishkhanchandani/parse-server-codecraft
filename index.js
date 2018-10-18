@@ -9,6 +9,7 @@ if (!databaseUri) {
 	console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
+//git push heroku master
 //https://parse-server-mk1.herokuapp.com/parse
 //https://mkparse.info/parse
 var api = new ParseServer({
@@ -48,8 +49,8 @@ var api = new ParseServer({
 	},
 	auth: {
 		twitter: {
-			consumer_key: "DgBjBDeWWu0btWv6CtlqrjbPc", // REQUIRED
-			consumer_secret: "oJ0TNz7ntakc8x67ylQuSZnZ0CAzij0aupYeAWyMPEVmUrNr66" // REQUIRED
+			consumer_key: "DgBjBDeWWu0btWv6CtlqrjbPc",
+			consumer_secret: "oJ0TNz7ntakc8x67ylQuSZnZ0CAzij0aupYeAWyMPEVmUrNr66"
 		}
 	}
 	
