@@ -46,6 +46,12 @@ var api = new ParseServer({
 	 		apiKey: process.env.MAILGUN_API_KEY  || "apikey"
 	 	}
 	},
+	auth: {
+		twitter: {
+			consumer_key: "DgBjBDeWWu0btWv6CtlqrjbPc", // REQUIRED
+			consumer_secret: "oJ0TNz7ntakc8x67ylQuSZnZ0CAzij0aupYeAWyMPEVmUrNr66" // REQUIRED
+		}
+	}
 	
 	//**** File Storage ****//
 	// filesAdapter: new S3Adapter(
