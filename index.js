@@ -56,6 +56,14 @@ var api = new ParseServer({
 			auth_token: "785942793642401793-Tro9YNXvhfSfrkLbPQ1w5CbbUZFFYpb",
 			auth_token_secret: "RQ32id3UKNiUxdZeE6KLLkPl48yK6VhNf0sWQDghSakmw",
 		}
+	},
+	twitter: {
+		id: "785942793642401793",
+		screen_name: "rollypolly74",
+		consumer_key: "DgBjBDeWWu0btWv6CtlqrjbPc",
+		consumer_secret: "oJ0TNz7ntakc8x67ylQuSZnZ0CAzij0aupYeAWyMPEVmUrNr66",
+		auth_token: "785942793642401793-Tro9YNXvhfSfrkLbPQ1w5CbbUZFFYpb",
+		auth_token_secret: "RQ32id3UKNiUxdZeE6KLLkPl48yK6VhNf0sWQDghSakmw",
 	}
 	
 	//**** File Storage ****//
