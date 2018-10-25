@@ -1,5 +1,6 @@
 git push heroku master
-
+https://parse-stage-mk.herokuapp.com/parse
+https://mkparse.info/parse
 
 
 heroku login
