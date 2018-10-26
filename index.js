@@ -2,6 +2,23 @@ var express = require('express');
 var ParseServer = require('parse-server').ParseServer;
 // var S3Adapter = require('parse-server').S3Adapter;
 var path = require('path');
+var ParseDashboard = require('parse-dashboard');
+var basicAuth = require('basic-auth');
+var auth = function (req, res, next) {
+  var user = basicAuth(req);
+  if (!user || !user.name || !user.pass) {
+    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+    res.sendStatus(401);
+    return;
+  }
+  if (user.name === 'user' && user.pass === 'passwords123') {
+    next();
+  } else {
+    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+    res.sendStatus(401);
+    return;
+  }
+};
 
 var databaseUri = process.env.DATABASE_URI || process.env.MONGODB_URI;
 
@@ -26,7 +43,7 @@ var api = new ParseServer({
 	
 	//**** Live Query ****//
 	liveQuery: {
-		classNames: ["TestObject1","XT_videos","St1_Enterprise","St1_Sites","Sites_Detailed","Enterprises_Detailed","All_Enterprise_Statistics"] // List of classes to support for query subscriptions - , "TestObject", "Place", "Team", "Player", "ChatMessage"
+		classNames: ["TestObject1","Sites_Detailed","Enterprises_Detailed","All_Enterprise_Statistics"] // List of classes to support for query subscriptions - , "TestObject", "Place", "Team", "Player", "ChatMessage"
 	},
 
 	//**** Email Verification ****//
@@ -59,7 +76,26 @@ var api = new ParseServer({
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
 
+//added for parse server dashboard
+var dashboard = new ParseDashboard({
+  "apps": [
+    {
+      "serverURL": process.env.SERVER_URL || 'http://localhost:1337/parse',
+      "appId": process.env.APP_ID || 'myAppID',
+      "masterKey": process.env.MASTER_KEY || 'myMasterKey',
+      "appName": "MyApp"
+    }
+  ]
+});
+//added ends
+
+
 var app = express();
+
+app.use('/dashboard', auth, dashboard);
+app.get("/auth", auth, function (req, res) {
+    res.send("This page is authenticated!")
+});
 
 // Serve static assets from the /public folder
 app.use('/public', express.static(path.join(__dirname, '/public')));
