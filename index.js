@@ -83,7 +83,8 @@ var dashboard = new ParseDashboard({
       "serverURL": process.env.SERVER_URL || 'http://localhost:1337/parse',
       "appId": process.env.APP_ID || 'myAppID',
       "masterKey": process.env.MASTER_KEY || 'myMasterKey',
-      "appName": "MyApp"
+      "appName": "MyApp",
+	  "allowInsecureHTTP": true
     }
   ]
 });
